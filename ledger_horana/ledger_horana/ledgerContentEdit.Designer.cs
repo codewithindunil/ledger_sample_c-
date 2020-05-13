@@ -32,7 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtInvoiceNo = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtSubmit = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -42,11 +41,8 @@
             this.txtInvoiceValue = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtPaidAmount = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnClear = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnVoucher = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuDropdown3 = new Bunifu.Framework.UI.BunifuDropdown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuDropdown2 = new Bunifu.Framework.UI.BunifuDropdown();
@@ -54,6 +50,10 @@
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnVoucher = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnClear = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.txtSubmit = new Bunifu.Framework.UI.BunifuThinButton2();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -95,31 +95,6 @@
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(65, 13);
             this.bunifuCustomLabel2.TabIndex = 10;
             this.bunifuCustomLabel2.Text = "Invoice No :";
-            // 
-            // txtSubmit
-            // 
-            this.txtSubmit.ActiveBorderThickness = 1;
-            this.txtSubmit.ActiveCornerRadius = 20;
-            this.txtSubmit.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.txtSubmit.ActiveForecolor = System.Drawing.Color.White;
-            this.txtSubmit.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.txtSubmit.BackColor = System.Drawing.SystemColors.Control;
-            this.txtSubmit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSubmit.BackgroundImage")));
-            this.txtSubmit.ButtonText = "SEARCH";
-            this.txtSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtSubmit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubmit.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txtSubmit.IdleBorderThickness = 1;
-            this.txtSubmit.IdleCornerRadius = 20;
-            this.txtSubmit.IdleFillColor = System.Drawing.Color.White;
-            this.txtSubmit.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.txtSubmit.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.txtSubmit.Location = new System.Drawing.Point(546, 40);
-            this.txtSubmit.Margin = new System.Windows.Forms.Padding(5);
-            this.txtSubmit.Name = "txtSubmit";
-            this.txtSubmit.Size = new System.Drawing.Size(181, 41);
-            this.txtSubmit.TabIndex = 15;
-            this.txtSubmit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuCustomLabel1
             // 
@@ -224,56 +199,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 13;
             // 
-            // btnClear
-            // 
-            this.btnClear.ActiveBorderThickness = 1;
-            this.btnClear.ActiveCornerRadius = 20;
-            this.btnClear.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btnClear.ActiveForecolor = System.Drawing.Color.White;
-            this.btnClear.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnClear.BackColor = System.Drawing.SystemColors.Control;
-            this.btnClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClear.BackgroundImage")));
-            this.btnClear.ButtonText = "CLEAR";
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnClear.IdleBorderThickness = 1;
-            this.btnClear.IdleCornerRadius = 20;
-            this.btnClear.IdleFillColor = System.Drawing.Color.White;
-            this.btnClear.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btnClear.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnClear.Location = new System.Drawing.Point(570, 360);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(5);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(181, 41);
-            this.btnClear.TabIndex = 16;
-            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnVoucher
-            // 
-            this.btnVoucher.ActiveBorderThickness = 1;
-            this.btnVoucher.ActiveCornerRadius = 20;
-            this.btnVoucher.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btnVoucher.ActiveForecolor = System.Drawing.Color.White;
-            this.btnVoucher.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnVoucher.BackColor = System.Drawing.SystemColors.Control;
-            this.btnVoucher.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoucher.BackgroundImage")));
-            this.btnVoucher.ButtonText = "VOUCHER";
-            this.btnVoucher.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVoucher.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoucher.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnVoucher.IdleBorderThickness = 1;
-            this.btnVoucher.IdleCornerRadius = 20;
-            this.btnVoucher.IdleFillColor = System.Drawing.Color.White;
-            this.btnVoucher.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btnVoucher.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnVoucher.Location = new System.Drawing.Point(761, 360);
-            this.btnVoucher.Margin = new System.Windows.Forms.Padding(5);
-            this.btnVoucher.Name = "btnVoucher";
-            this.btnVoucher.Size = new System.Drawing.Size(181, 41);
-            this.btnVoucher.TabIndex = 17;
-            this.btnVoucher.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // bunifuDropdown3
             // 
             this.bunifuDropdown3.BackColor = System.Drawing.Color.Transparent;
@@ -318,32 +243,7 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
-            // 
-            // bunifuThinButton21
-            // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "ENTER";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(362, 360);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
-            this.bunifuThinButton21.TabIndex = 25;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // bunifuMetroTextbox1
             // 
@@ -426,10 +326,112 @@
             this.bunifuCustomLabel6.TabIndex = 26;
             this.bunifuCustomLabel6.Text = "Designed by Autonomous Factory  0761262279";
             // 
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 20;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
+            this.bunifuThinButton21.ButtonText = "ENTER";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 20;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.Location = new System.Drawing.Point(362, 360);
+            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
+            this.bunifuThinButton21.TabIndex = 25;
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            // 
+            // btnVoucher
+            // 
+            this.btnVoucher.ActiveBorderThickness = 1;
+            this.btnVoucher.ActiveCornerRadius = 20;
+            this.btnVoucher.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnVoucher.ActiveForecolor = System.Drawing.Color.White;
+            this.btnVoucher.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnVoucher.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnVoucher.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoucher.BackgroundImage")));
+            this.btnVoucher.ButtonText = "VOUCHER";
+            this.btnVoucher.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoucher.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoucher.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnVoucher.IdleBorderThickness = 1;
+            this.btnVoucher.IdleCornerRadius = 20;
+            this.btnVoucher.IdleFillColor = System.Drawing.Color.White;
+            this.btnVoucher.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnVoucher.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnVoucher.Location = new System.Drawing.Point(761, 360);
+            this.btnVoucher.Margin = new System.Windows.Forms.Padding(5);
+            this.btnVoucher.Name = "btnVoucher";
+            this.btnVoucher.Size = new System.Drawing.Size(181, 41);
+            this.btnVoucher.TabIndex = 17;
+            this.btnVoucher.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnClear
+            // 
+            this.btnClear.ActiveBorderThickness = 1;
+            this.btnClear.ActiveCornerRadius = 20;
+            this.btnClear.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnClear.ActiveForecolor = System.Drawing.Color.White;
+            this.btnClear.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnClear.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClear.BackgroundImage")));
+            this.btnClear.ButtonText = "CLEAR";
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnClear.IdleBorderThickness = 1;
+            this.btnClear.IdleCornerRadius = 20;
+            this.btnClear.IdleFillColor = System.Drawing.Color.White;
+            this.btnClear.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnClear.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnClear.Location = new System.Drawing.Point(570, 360);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(5);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(181, 41);
+            this.btnClear.TabIndex = 16;
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtSubmit
+            // 
+            this.txtSubmit.ActiveBorderThickness = 1;
+            this.txtSubmit.ActiveCornerRadius = 20;
+            this.txtSubmit.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.txtSubmit.ActiveForecolor = System.Drawing.Color.White;
+            this.txtSubmit.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.txtSubmit.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtSubmit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSubmit.BackgroundImage")));
+            this.txtSubmit.ButtonText = "SEARCH";
+            this.txtSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtSubmit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubmit.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txtSubmit.IdleBorderThickness = 1;
+            this.txtSubmit.IdleCornerRadius = 20;
+            this.txtSubmit.IdleFillColor = System.Drawing.Color.White;
+            this.txtSubmit.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.txtSubmit.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.txtSubmit.Location = new System.Drawing.Point(546, 40);
+            this.txtSubmit.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSubmit.Name = "txtSubmit";
+            this.txtSubmit.Size = new System.Drawing.Size(181, 41);
+            this.txtSubmit.TabIndex = 15;
+            this.txtSubmit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ledgerContentEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Controls.Add(this.bunifuCustomLabel6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

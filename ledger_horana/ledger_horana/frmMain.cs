@@ -106,6 +106,12 @@ namespace ledger_horana
             }
         }
 
+        private void lblUser_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+           
+        }
+
         private void bunifuTileButton4_Click(object sender, EventArgs e)
         {
             if (privilages == "1")

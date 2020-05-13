@@ -93,6 +93,12 @@
     <Compile Include="addSubCategoryContent.Designer.cs">
       <DependentUpon>addSubCategoryContent.cs</DependentUpon>
     </Compile>
+    <Compile Include="chechDueCheckesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="chechDueCheckesView.Designer.cs">
+      <DependentUpon>chechDueCheckesView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +140,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVoucherPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVoucherPrint.Designer.cs">
+      <DependentUpon>frmVoucherPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="implementActions.cs" />
     <Compile Include="ledgerContentCredit.cs">
@@ -178,6 +190,9 @@
     <EmbeddedResource Include="addSubCategoryContent.resx">
       <DependentUpon>addSubCategoryContent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="chechDueCheckesView.resx">
+      <DependentUpon>chechDueCheckesView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
@@ -200,6 +215,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVoucherPrint.resx">
+      <DependentUpon>frmVoucherPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ledgerContentCredit.resx">
       <DependentUpon>ledgerContentCredit.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +238,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="reportMain.resx">
       <DependentUpon>reportMain.cs</DependentUpon>
@@ -240,6 +259,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

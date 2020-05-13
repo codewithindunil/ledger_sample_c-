@@ -16,5 +16,14 @@ namespace ledger_horana
         {
             InitializeComponent();
         }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            chechDueCheckesView item = new chechDueCheckesView();
+            panel1.Controls.Clear();
+            //item.Top = 10;
+            //item.Left = 10;
+            panel1.Controls.Add(item);
+        }
     }
 }

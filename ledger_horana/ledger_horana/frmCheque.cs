@@ -14,11 +14,12 @@ namespace ledger_horana
     public partial class frmCheque : Form
     {
         String amount;
-        String invoiceNo;
-        public frmCheque(String amount,String invoiceNo)
+        String invoiceNo,cod,credited,debited;
+        public frmCheque(String amount,String invoiceNo,String cod)
         {
             this.amount = amount;
             this.invoiceNo = invoiceNo;
+            this.cod = cod;
             InitializeComponent();
 
         }
@@ -32,6 +33,14 @@ namespace ledger_horana
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
+            if (cod == "CREDIT")
+            {
+                credited = txtAmount.Text;
+            }
+            else
+            {
+                debited = txtAmount.Text;
+            }
             var d = dateTimePicker1.Value.Date;
            
             CultureInfo cul = CultureInfo.CurrentCulture;
@@ -44,7 +53,7 @@ namespace ledger_horana
             //MessageBox.Show(weekNum.ToString());
 
             //MessageBox.Show(dateTimePicker1.Value.Date.ToString());
-            new implementActions().saveCheque(txtChequeNo.Text, txtAmount.Text, dateTimePicker1.Value.Date, txtBank.Text, lblInvoiceNo.Text, dateNum.ToString(), weekNum.ToString());
+            new implementActions().saveCheque(txtChequeNo.Text, txtAmount.Text,credited,debited, dateTimePicker1.Value.Date, txtBank.Text, lblInvoiceNo.Text, dateNum.ToString(), weekNum.ToString());
         }
     }
 }

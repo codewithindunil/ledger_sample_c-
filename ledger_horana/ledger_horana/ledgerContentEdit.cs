@@ -24,10 +24,15 @@ namespace ledger_horana
 
         private void bunifuDropdown3_onItemSelected(object sender, EventArgs e)
         {
-            if (bunifuDropdown3.selectedValue.ToString() == "CHEQUE")
-            {
-                new frmCheque(txtInvoiceValue.Text, txtInvoiceNo.Text).Show();
-            }
+            //if (bunifuDropdown3.selectedValue.ToString() == "CHEQUE")
+            //{
+            //    new frmCheque(txtInvoiceValue.Text, txtInvoiceNo.Text,"").Show();
+            //}
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

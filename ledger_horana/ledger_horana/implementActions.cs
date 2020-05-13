@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace ledger_horana
     {
         bool status = false;
         int count;
-        String serverPassword="";
+         public  String serverPassword="1627";
         public bool addCategory(String cname)
         {
             MySqlDataReader rd;
@@ -56,8 +57,8 @@ namespace ledger_horana
             conn = new MySqlConnection(connetionString);
             String query;
             user = "test";
-            query = "insert into ledger_horanadb.ledgercredit ( category,sub_category,invoice_no,invoice_date,invoice_value,paid_value,cash_or_cheque,bnn,user,igeshe,week_no,date_no) values" +
-                " ('" + category + "','" + subCategory + "','"+ invoiceNo +"','"+invoiceDate+"','" +invoiceValue +"','" +paidValue +"','" +cOrCheque +"','" +bnn +"','" +user +"','" +igeshe + "','" + weekNum + "','" + dateNum + "')";
+            query = "insert into ledger_horanadb.ledgerdebit ( category,sub_category,invoice_no,invoice_date,invoice_value,paid_value,credited,debited,cash_or_cheque,bnn,user,igeshe,week_no,date_no) values" +
+                " ('" + category + "','" + subCategory + "','"+ invoiceNo +"','"+invoiceDate+"','" +invoiceValue +"','" +paidValue +"','"+paidValue+"','"+0+"','" +cOrCheque +"','" +bnn +"','" +user +"','" +igeshe + "','" + weekNum + "','" + dateNum + "')";
             Console.WriteLine(DateTime.Now);
 
             MySqlCommand command = new MySqlCommand(query, conn);
@@ -77,11 +78,13 @@ namespace ledger_horana
                 status = false;
                 conn.Dispose();
             }
+            updateCreditTotal(paidValue);
             return status;
         }
 
         public bool addDebit(String category, String subCategory, String invoiceNo, String invoiceDate, double invoiceValue, double paidValue, String cOrCheque, int bnn, String user, double igeshe, String weekNum, String dateNum)
         {
+            
 
             MySqlDataReader rd;
             MySqlConnection conn;
@@ -90,9 +93,9 @@ namespace ledger_horana
             conn = new MySqlConnection(connetionString);
             String query;
             user = "test";
-            query = "insert into ledger_horanadb.ledgerdebit ( category,sub_category,invoice_no,invoice_date,invoice_value,paid_value,cash_or_cheque,bnn,user,igeshe,week_no,date_no) values" +
+            query = "insert into ledger_horanadb.ledgerdebit ( category,sub_category,invoice_no,invoice_date,invoice_value,paid_value,credited,debited,cash_or_cheque,bnn,user,igeshe,week_no,date_no) values" +
                                                                
-                " ('" + category + "','" + subCategory + "','" + invoiceNo + "','" + invoiceDate + "','" + invoiceValue + "','" + paidValue + "','" + cOrCheque + "','" + bnn + "','" + user + "','" + igeshe + "','"+weekNum+"','"+dateNum+"')";
+                " ('" + category + "','" + subCategory + "','" + invoiceNo + "','" + invoiceDate + "','" + invoiceValue + "','" + paidValue + "','"+0+"','"+ paidValue + "','" + cOrCheque + "','" + bnn + "','" + user + "','" + igeshe + "','"+weekNum+"','"+dateNum+"')";
             Console.WriteLine(DateTime.Now);
 
             MySqlCommand command = new MySqlCommand(query, conn);
@@ -102,6 +105,7 @@ namespace ledger_horana
                 conn.Open();
                 rd = command.ExecuteReader();
                 status = true;
+                Console.WriteLine("debit call uno");
                 conn.Close();
                 updateCredit(igeshe.ToString());
             }
@@ -112,6 +116,8 @@ namespace ledger_horana
                 status = false;
                 conn.Dispose();
             }
+
+            updateDebitTotal(paidValue);
             return status;
         }
 
@@ -256,7 +262,6 @@ namespace ledger_horana
             connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
             conn = new MySqlConnection(connetionString);
             String query;
-            String user = "test";
             query = "insert into ledger_horanadb.users (  name,username,password,privilages,addedBy) values" +
                 " ('" + name.ToUpper() + "','" + username.ToUpper() + "','" + password.ToUpper() + "','" + privilages + "','" + addedBy.ToUpper() + "')";
             Console.WriteLine(DateTime.Now);
@@ -280,7 +285,7 @@ namespace ledger_horana
             }
         }
 
-        public void saveCheque(string chequeNo, string chequeValue, DateTime dueDate, string bankName, string invoiceNo,String dayNo,String weekNo)
+        public void saveCheque(string chequeNo, string chequeValue,String credited,String debited, DateTime dueDate, string bankName, string invoiceNo,String dayNo,String weekNo)
         {
             MySqlDataReader rd;
             MySqlConnection conn;
@@ -288,9 +293,8 @@ namespace ledger_horana
             connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
             conn = new MySqlConnection(connetionString);
             String query;
-            String user = "test";
-            query = "insert into ledger_horanadb.duecheques (  chequeNo,chequeValue,bankName,invoiceId,dueDayNo,dueWeekNo,dueDate) values" +
-                " ('" + chequeNo.ToUpper() + "','" + chequeValue.ToUpper() + "','" + bankName.ToUpper() + "','"+invoiceNo.ToUpper()+"','"+dayNo+"','"+weekNo+"','" + dueDate.Date + "')";
+            query = "insert into ledger_horanadb.duecheques (  chequeNo,chequeValue,credited,debited,bankName,invoiceId,dueDayNo,dueWeekNo,dueDate) values" +
+                " ('" + chequeNo.ToUpper() + "','" + chequeValue.ToUpper() + "','"+credited+"','"+debited+"','" + bankName.ToUpper() + "','"+invoiceNo.ToUpper()+"','"+dayNo+"','"+weekNo+"','" + dueDate.Date + "')";
             Console.WriteLine(DateTime.Now);
 
             MySqlCommand command = new MySqlCommand(query, conn);
@@ -325,7 +329,6 @@ namespace ledger_horana
             connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
             conn = new MySqlConnection(connetionString);
             String query;
-            String user = "test";
             query = "update ledger_horanadb.creditigeshe set credit = '"+creditNew+"' where id=2 ";
             Console.WriteLine(DateTime.Now);
 
@@ -356,7 +359,6 @@ namespace ledger_horana
             connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
             conn = new MySqlConnection(connetionString);
             String query;
-            String user = "test";
             query = "update ledger_horanadb.creditigeshe set debit = '" + debitNew + "' where id=2 ";
             Console.WriteLine(DateTime.Now);
 
@@ -378,6 +380,248 @@ namespace ledger_horana
             }
             return true;
 
+        }
+
+        public void checkDuePayements()
+        {
+            Console.WriteLine("method called");
+            var d = DateTime.Now;
+
+            CultureInfo cul = CultureInfo.CurrentCulture;
+            int weekNum = cul.Calendar.GetWeekOfYear(
+                 d,
+                CalendarWeekRule.FirstDay,
+                DayOfWeek.Monday);
+            int dateNum = cul.Calendar.GetDayOfYear(d);
+            MySqlDataReader rd;
+            String user = "", privilages = "";
+            MySqlConnection conn;
+            string connetionString = null;
+            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            conn = new MySqlConnection(connetionString);
+            String query;
+
+
+            query = "select * from duecheques where dueDayNo = '" + dateNum + "' ";
+
+            try
+            {
+                conn.Open();
+                MySqlCommand command = new MySqlCommand(query, conn);
+                rd = command.ExecuteReader();
+                while (rd.Read())
+                {
+                    Console.WriteLine("ekek innwa");
+                    count = count + 1;
+                    String chequeNo, chequeValue, bankName, invoiceId, dueDayNo, dueWeekNo, enteredDate, credited,debited;
+
+                    chequeNo = rd["chequeNo"].ToString();
+                    chequeValue = rd["chequeValue"].ToString();
+                    bankName = rd["bankName"].ToString();
+                    invoiceId = rd["invoiceId"].ToString();
+                    dueDayNo = rd["dueDayNo"].ToString();
+                    dueWeekNo = rd["dueWeekNo"].ToString();
+                    chequeValue = rd["chequeValue"].ToString();
+                    enteredDate = rd["enteredDate"].ToString();
+                    credited = rd["credited"].ToString();
+                    debited = rd["debited"].ToString();
+
+                    if (Double.Parse(debited)>0 )
+                    {
+                        Console.WriteLine("debited");
+                        addDebit("CHEQUE", bankName, invoiceId, enteredDate, Double.Parse(chequeValue), Double.Parse(chequeValue), "CHEQUE", 0, "", 0, weekNum.ToString(), dateNum.ToString());
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("credited");
+
+                        addCredit("CHEQUE", bankName, invoiceId, enteredDate, Double.Parse(chequeValue), Double.Parse(chequeValue), "CHEQUE", 0, "", 0, weekNum.ToString(), dateNum.ToString());
+
+                    }
+
+
+                }
+
+
+              
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            deleteUpdatedDueCheques();
+        }
+
+        public void updateDebitTotal(Double val)
+        {
+            var d = DateTime.Now;
+
+            CultureInfo cul = CultureInfo.CurrentCulture;
+            int weekNum = cul.Calendar.GetWeekOfYear(
+                 d,
+                CalendarWeekRule.FirstDay,
+                DayOfWeek.Monday);
+            int dateNum = cul.Calendar.GetDayOfYear(d);
+
+            MySqlDataReader rd;
+            MySqlConnection conn;
+            string connetionString = null;
+            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            conn = new MySqlConnection(connetionString);
+            String query;
+            query = "update ledger_horanadb.dailyTotal set debitTotal = debitTotal +'" + val + "' where dateNo='"+dateNum+"' ";
+            Console.WriteLine(DateTime.Now);
+
+            MySqlCommand command = new MySqlCommand(query, conn);
+
+            try
+            {
+                conn.Open();
+                rd = command.ExecuteReader();
+                status = true;
+                conn.Close();
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                status = false;
+                conn.Dispose();
+            }
+        }
+
+        public void setDailyTotalIfNotSet()
+        {
+
+            var d = DateTime.Now;
+
+            CultureInfo cul = CultureInfo.CurrentCulture;
+            int weekNum = cul.Calendar.GetWeekOfYear(
+                 d,
+                CalendarWeekRule.FirstDay,
+                DayOfWeek.Monday);
+            int dateNum = cul.Calendar.GetDayOfYear(d);
+            MySqlDataReader rd;
+            string sMonth = DateTime.Now.ToString("MM");
+            MySqlConnection conn;
+            string connetionString = null;
+            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            conn = new MySqlConnection(connetionString);
+            String query;
+            
+
+            query = "select * from dailyTotal where dateNo='" + dateNum + "'";
+            String query2 = "insert into ledger_horanadb.dailyTotal (  dateNo	,wekNo	,monthNo	,creditTotal	,debitTotal) values" +
+             " ('" + dateNum + "','" + weekNum + "','" + sMonth + "','" + 0 + "','" + 0 + "')";
+
+            try
+            {
+                conn.Open();
+                MySqlCommand command = new MySqlCommand(query, conn);
+                rd = command.ExecuteReader();
+                while (rd.Read())
+                {
+                    count = count + 1;
+
+                }
+                conn.Close();
+                if (count == 0)
+                {
+                    MySqlCommand command2 = new MySqlCommand(query2, conn);
+
+                    try
+                    {
+                        conn.Open();
+                        rd = command2.ExecuteReader();
+                        status = true;
+                        
+
+
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
+                    conn.Close();
+                }
+
+
+            }   catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+               
+        }
+        public void updateCreditTotal(Double val)
+        {
+            var d = DateTime.Now;
+
+            CultureInfo cul = CultureInfo.CurrentCulture;
+            int weekNum = cul.Calendar.GetWeekOfYear(
+                 d,
+                CalendarWeekRule.FirstDay,
+                DayOfWeek.Monday);
+            int dateNum = cul.Calendar.GetDayOfYear(d);
+
+            MySqlDataReader rd;
+            MySqlConnection conn;
+            string connetionString = null;
+            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            conn = new MySqlConnection(connetionString);
+            String query;
+            query = "update ledger_horanadb.dailyTotal set creditTotal = creditTotal +'" + val + "' where dateNo='" + dateNum + "' ";
+            Console.WriteLine(DateTime.Now);
+
+            MySqlCommand command = new MySqlCommand(query, conn);
+
+            try
+            {
+                conn.Open();
+                rd = command.ExecuteReader();
+                status = true;
+                conn.Close();
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                status = false;
+                conn.Dispose();
+            }
+        }
+
+        public void deleteUpdatedDueCheques()
+        {
+            var d = DateTime.Now;
+
+            CultureInfo cul = CultureInfo.CurrentCulture;
+            int weekNum = cul.Calendar.GetWeekOfYear(
+                 d,
+                CalendarWeekRule.FirstDay,
+                DayOfWeek.Monday);
+            int dateNum = cul.Calendar.GetDayOfYear(d);
+
+            MySqlDataReader rd;
+
+            MySqlConnection conn;
+            string connetionString = null;
+            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd='"+serverPassword+"';";
+            conn = new MySqlConnection(connetionString);
+            conn.Open();
+            try
+            {
+                MySqlCommand deletecmd = new MySqlCommand("delete from duecheques where dueDayNo = '" + dateNum + "'", conn);
+                deletecmd.ExecuteNonQuery();
+                Console.WriteLine(dateNum + "cheque deleted");
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
     }

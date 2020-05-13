@@ -26,7 +26,7 @@ namespace ledger_horana
         bool saveDueCheques();
 
 
-        void saveCheque(String chequeNo,String chequeValue,DateTime dueDate,String bankName,String invoiceNo,String dateNum,String weekNo);
+        void saveCheque(String chequeNo,String chequeValue, String credited, String debited, DateTime dueDate,String bankName,String invoiceNo,String dateNum,String weekNo);
 
 
 

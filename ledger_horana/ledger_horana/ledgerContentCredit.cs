@@ -21,7 +21,8 @@ namespace ledger_horana
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            
+           
         }
 
         private void txtSubmit_Click(object sender, EventArgs e)
@@ -56,8 +57,7 @@ namespace ledger_horana
             //Console.WriteLine(ret);
 
 
-            if (igesheOld > 0)
-            {
+            
                 igesheNew = igesheOld + invoiceValue;
                 bool status = new implementActions().addCredit(category, subCategory, invoiceNo, invoiceDate, invoiceValue, paidValue, cOrCheque, bnn, user, igesheNew,weekNum.ToString(),dateNum.ToString());
                 if (status == true)
@@ -69,7 +69,7 @@ namespace ledger_horana
                     MessageBox.Show("failes");
                 }
 
-            }
+            
 
 
             
@@ -101,10 +101,10 @@ namespace ledger_horana
         public void loadSubCategories(String categ)
         {
             MySqlDataReader rd;
-
+            String serverPassqord = new implementActions().serverPassword;
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=;";
+            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd='"+serverPassqord+"';";
             conn = new MySqlConnection(connetionString);
             String query;
 
@@ -134,10 +134,11 @@ namespace ledger_horana
         public void loadCategories()
         {
             MySqlDataReader rd;
+            String serverPassqord = new implementActions().serverPassword;
 
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=;";
+            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd='"+serverPassqord+"';";
             conn = new MySqlConnection(connetionString);
             String query;
 
@@ -176,8 +177,18 @@ namespace ledger_horana
         {
             if (bunifuDropdown3.selectedValue.ToString() == "CHEQUE")
             {
-                new frmCheque(txtInvoiceValue.Text, txtInvoiceNo.Text).Show();
+                new frmCheque(txtInvoiceValue.Text, txtInvoiceNo.Text,"CREDIT").Show();
             }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVoucher_Click(object sender, EventArgs e)
+        {
+            new frmVoucherPrint("","","","","","").Show();
         }
     }
 }

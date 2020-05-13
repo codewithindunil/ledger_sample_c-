@@ -47,3 +47,5 @@ D:\project horana\ledger_horana\ledger_horana\bin\Debug\CrystalDecisions.ReportA
 D:\project horana\ledger_horana\ledger_horana\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\project horana\ledger_horana\ledger_horana\bin\Debug\stdole.dll
 D:\project horana\ledger_horana\ledger_horana\obj\Debug\ledger_horana.frmAdmin.resources
+D:\project horana\ledger_horana\ledger_horana\obj\Debug\ledger_horana.chechDueCheckesView.resources
+D:\project horana\ledger_horana\ledger_horana\obj\Debug\ledger_horana.frmVoucherPrint.resources

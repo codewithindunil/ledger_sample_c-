@@ -30,10 +30,11 @@ namespace ledger_horana
         public void loadCategories()
         {
             MySqlDataReader rd;
+            String serverPassqord = new implementActions().serverPassword;
 
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=;";
+            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd='"+serverPassqord+"';";
             conn = new MySqlConnection(connetionString);
             String query;
 

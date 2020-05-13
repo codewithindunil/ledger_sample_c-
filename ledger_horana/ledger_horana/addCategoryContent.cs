@@ -29,5 +29,10 @@ namespace ledger_horana
                 MessageBox.Show("fail");
             }
         }
+
+        private void bunifuCards1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

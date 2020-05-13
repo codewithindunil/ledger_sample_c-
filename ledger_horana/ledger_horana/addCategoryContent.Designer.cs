@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addCategoryContent));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.txtCategoryName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
+            this.bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCards1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,33 @@
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(996, 592);
             this.bunifuCards1.TabIndex = 0;
+            this.bunifuCards1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards1_Paint);
+            // 
+            // txtCategoryName
+            // 
+            this.txtCategoryName.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txtCategoryName.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCategoryName.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.txtCategoryName.BorderThickness = 3;
+            this.txtCategoryName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCategoryName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtCategoryName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCategoryName.isPassword = false;
+            this.txtCategoryName.Location = new System.Drawing.Point(167, 59);
+            this.txtCategoryName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCategoryName.Name = "txtCategoryName";
+            this.txtCategoryName.Size = new System.Drawing.Size(370, 44);
+            this.txtCategoryName.TabIndex = 2;
+            this.txtCategoryName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(58, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Cstegory Name : ";
             // 
             // bunifuThinButton23
             // 
@@ -105,32 +132,6 @@
             this.bunifuThinButton21.TabIndex = 3;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
-            // 
-            // txtCategoryName
-            // 
-            this.txtCategoryName.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txtCategoryName.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCategoryName.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txtCategoryName.BorderThickness = 3;
-            this.txtCategoryName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCategoryName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtCategoryName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCategoryName.isPassword = false;
-            this.txtCategoryName.Location = new System.Drawing.Point(167, 59);
-            this.txtCategoryName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(370, 44);
-            this.txtCategoryName.TabIndex = 2;
-            this.txtCategoryName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cstegory Name : ";
             // 
             // addCategoryContent
             // 

@@ -19,23 +19,31 @@ namespace ledger_horana
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //new implementActions().updateDebitTotal(100);
             bool status = new implementActions().Login(txtUserName.Text.ToString(), txtPassword.Text.ToString());
-            txtUserName.Text = ""; 
-                txtPassword.Text = "";
+            txtUserName.Text = "";
+            txtPassword.Text = "";
 
             if (status == true)
             {
                 this.Hide();
             }
-            
-            //if (status == true)
-            //{
-            //new frmMain().Show();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("invalid");
-            //}
+
+            //new implementActions().checkDuePayements();
+
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            new implementActions().checkDuePayements();
+            new implementActions().setDailyTotalIfNotSet();
+
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

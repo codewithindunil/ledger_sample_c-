@@ -23,7 +23,6 @@ namespace ledger_horana
         {
             String category, subCategory, invoiceNo, cOrCheque, user;
             double invoiceValue, paidValue, igesheOld, igesheNew;
-            DateTime dueDate;
             int bnn;
             String invoiceDate;
 
@@ -51,8 +50,7 @@ namespace ledger_horana
             int dateNum = cul.Calendar.GetDayOfYear(d);
 
 
-            if (igesheOld > 0)
-                {
+          
                     igesheNew = igesheOld + invoiceValue;
                     bool status = new implementActions().addDebit(category, subCategory, invoiceNo, invoiceDate, invoiceValue, paidValue, cOrCheque, bnn, user, igesheNew,weekNum.ToString(), dateNum.ToString());
                     if (status == true)
@@ -64,7 +62,7 @@ namespace ledger_horana
                         MessageBox.Show("failes");
                     }
 
-                }
+                
             
 
            
@@ -78,10 +76,11 @@ namespace ledger_horana
         public void loadSubCategories(String categ)
         {
             MySqlDataReader rd;
+            String serverPassqord = new implementActions().serverPassword;
 
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=;";
+            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd='"+serverPassqord+"';";
             conn = new MySqlConnection(connetionString);
             String query;
 
@@ -117,10 +116,11 @@ namespace ledger_horana
         public void loadCategories()
         {
             MySqlDataReader rd;
+            String serverPassqord = new implementActions().serverPassword;
 
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=;";
+            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd='"+serverPassqord+"';";
             conn = new MySqlConnection(connetionString);
             String query;
 
@@ -150,8 +150,19 @@ namespace ledger_horana
         {
             if (bunifuDropdown3.selectedValue.ToString() == "CHEQUE")
             {
-                new frmCheque(txtInvoiceValue.Text,txtInvoiceNo.Text).Show();
+                new frmCheque(txtInvoiceValue.Text,txtInvoiceNo.Text,"DEBIT").Show();
             }
+        }
+
+        private void btnVoucher_Click(object sender, EventArgs e)
+        {
+            new frmVoucherPrint("", "", "", "", "", "").Show();
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
