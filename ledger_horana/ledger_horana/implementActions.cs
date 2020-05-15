@@ -13,13 +13,16 @@ namespace ledger_horana
     {
         bool status = false;
         int count;
+        public String dt, ct;
          public  String serverPassword="1627";
+        public String serverName = "localhost";
+        public String serveruser = "root";
         public bool addCategory(String cname)
         {
             MySqlDataReader rd;
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd="+serverPassword+";";
+            connetionString = "server='"+serverName+"';database=ledger_horanadb;uid='"+serveruser+"';pwd='"+serverPassword+"';";
             conn = new MySqlConnection(connetionString);
             String query;
             String user = "test";
@@ -52,8 +55,7 @@ namespace ledger_horana
 
             MySqlDataReader rd;
             MySqlConnection conn;
-            string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            String connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
             user = "test";
@@ -89,7 +91,7 @@ namespace ledger_horana
             MySqlDataReader rd;
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
             user = "test";
@@ -126,7 +128,7 @@ namespace ledger_horana
             MySqlDataReader rd;
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
             String user = "test";
@@ -179,7 +181,7 @@ namespace ledger_horana
             String creditVal="";
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
 
@@ -211,7 +213,7 @@ namespace ledger_horana
             String user="", privilages="";
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
 
@@ -246,7 +248,7 @@ namespace ledger_horana
             }
             if (status == true)
             {
-                new frmMain(user,privilages).Show();
+                new frmMain(user, privilages).Show();
 
 
             }
@@ -259,7 +261,7 @@ namespace ledger_horana
             MySqlDataReader rd;
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
             query = "insert into ledger_horanadb.users (  name,username,password,privilages,addedBy) values" +
@@ -290,7 +292,7 @@ namespace ledger_horana
             MySqlDataReader rd;
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
             query = "insert into ledger_horanadb.duecheques (  chequeNo,chequeValue,credited,debited,bankName,invoiceId,dueDayNo,dueWeekNo,dueDate) values" +
@@ -326,7 +328,7 @@ namespace ledger_horana
             MySqlDataReader rd;
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
             query = "update ledger_horanadb.creditigeshe set credit = '"+creditNew+"' where id=2 ";
@@ -356,7 +358,7 @@ namespace ledger_horana
             MySqlDataReader rd;
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
             query = "update ledger_horanadb.creditigeshe set debit = '" + debitNew + "' where id=2 ";
@@ -397,7 +399,7 @@ namespace ledger_horana
             String user = "", privilages = "";
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
 
@@ -468,7 +470,7 @@ namespace ledger_horana
             MySqlDataReader rd;
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
             query = "update ledger_horanadb.dailyTotal set debitTotal = debitTotal +'" + val + "' where dateNo='"+dateNum+"' ";
@@ -490,6 +492,8 @@ namespace ledger_horana
                 status = false;
                 conn.Dispose();
             }
+
+            //viewDailyTotal();
         }
 
         public void setDailyTotalIfNotSet()
@@ -507,7 +511,7 @@ namespace ledger_horana
             string sMonth = DateTime.Now.ToString("MM");
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
             
@@ -569,7 +573,7 @@ namespace ledger_horana
             MySqlDataReader rd;
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
             conn = new MySqlConnection(connetionString);
             String query;
             query = "update ledger_horanadb.dailyTotal set creditTotal = creditTotal +'" + val + "' where dateNo='" + dateNum + "' ";
@@ -591,6 +595,8 @@ namespace ledger_horana
                 status = false;
                 conn.Dispose();
             }
+
+            //viewDailyTotal();
         }
 
         public void deleteUpdatedDueCheques()
@@ -608,7 +614,7 @@ namespace ledger_horana
 
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd='"+serverPassword+"';";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword+"';";
             conn = new MySqlConnection(connetionString);
             conn.Open();
             try
@@ -621,6 +627,54 @@ namespace ledger_horana
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void viewDailyTotal()
+        {
+            var d = DateTime.Now;
+
+            CultureInfo cul = CultureInfo.CurrentCulture;
+            String serverName = new implementActions().serverName;
+            String serveruser = new implementActions().serveruser;
+            String serverPassword = new implementActions().serverPassword;
+
+            int dateNum = cul.Calendar.GetDayOfYear(d);
+            MySqlDataReader rd;
+            string sMonth = DateTime.Now.ToString("MM");
+            MySqlConnection conn;
+            string connetionString = null;
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
+            conn = new MySqlConnection(connetionString);
+            String query;
+
+
+            query = "select * from dailyTotal where dateNo='" + dateNum + "'";
+
+            try
+            {
+                conn.Open();
+                MySqlCommand command = new MySqlCommand(query, conn);
+                rd = command.ExecuteReader();
+                while (rd.Read())
+                {
+                     this.dt = rd["debitTotal"].ToString();
+                     this.ct = rd["creditTotal"].ToString();
+                    frmMain.ActiveForm.Controls["lblDebit"].Text = dt;
+                    Console.WriteLine(dt);
+                    Console.WriteLine(ct);
+                    
+
+
+                }
+                conn.Close();
+
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
 

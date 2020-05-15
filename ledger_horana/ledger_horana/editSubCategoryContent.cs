@@ -16,5 +16,10 @@ namespace ledger_horana
         {
             InitializeComponent();
         }
+
+        private void bunifuDropdown2_onItemSelected(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,7 +33,9 @@ namespace ledger_horana
         {
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
-            String serverPassword = "";
+            String serverPassword = new implementActions().serverPassword;
+            String serverName = new implementActions().serverName;
+            String serveruser = new implementActions().serveruser;
             var d =dateTimePicker1.Value;
 
             CultureInfo cul = CultureInfo.CurrentCulture;
@@ -46,7 +48,7 @@ namespace ledger_horana
             MySqlConnection conn;
             MySqlDataAdapter adapter;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd=" + serverPassword + ";;";
             conn = new MySqlConnection(connetionString);
             String query;
             int count=0;
@@ -116,7 +118,9 @@ namespace ledger_horana
         {
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
-            String serverPassword = "";
+            String serverPassword = new implementActions().serverPassword;
+            String serverName = new implementActions().serverName;
+            String serveruser = new implementActions().serveruser;
             var d = dateTimePicker1.Value;
 
             CultureInfo cul = CultureInfo.CurrentCulture;
@@ -129,7 +133,7 @@ namespace ledger_horana
             MySqlConnection conn;
             MySqlDataAdapter adapter;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd=" + serverPassword + ";;";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd=" + serverPassword + ";;";
             conn = new MySqlConnection(connetionString);
             String query;
             int count = 0;

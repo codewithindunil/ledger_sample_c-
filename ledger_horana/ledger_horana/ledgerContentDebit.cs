@@ -77,10 +77,12 @@ namespace ledger_horana
         {
             MySqlDataReader rd;
             String serverPassqord = new implementActions().serverPassword;
+            String serverName = new implementActions().serverName;
+            String serveruser = new implementActions().serveruser;
 
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd='"+serverPassqord+"';";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassqord+"';";
             conn = new MySqlConnection(connetionString);
             String query;
 
@@ -117,10 +119,12 @@ namespace ledger_horana
         {
             MySqlDataReader rd;
             String serverPassqord = new implementActions().serverPassword;
+            String serveruser = new implementActions().serveruser;
+            String serverName = new implementActions().serverName;
 
             MySqlConnection conn;
             string connetionString = null;
-            connetionString = "server=localhost;database=ledger_horanadb;uid=root;pwd='"+serverPassqord+"';";
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassqord+"';";
             conn = new MySqlConnection(connetionString);
             String query;
 

@@ -39,8 +39,13 @@
             this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtDebit = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtCredit = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblDebit = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblGeweem = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +53,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.lblGeweem);
+            this.panel1.Controls.Add(this.lblDebit);
+            this.panel1.Controls.Add(this.txtCredit);
+            this.panel1.Controls.Add(this.txtDebit);
+            this.panel1.Controls.Add(this.bunifuCustomLabel2);
             this.panel1.Controls.Add(this.bunifuThinButton21);
             this.panel1.Controls.Add(this.bunifuTileButton4);
             this.panel1.Controls.Add(this.lblUser);
@@ -104,7 +114,7 @@
             this.bunifuTileButton4.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton4.Name = "bunifuTileButton4";
             this.bunifuTileButton4.Size = new System.Drawing.Size(104, 99);
-            this.bunifuTileButton4.TabIndex = 3;
+            this.bunifuTileButton4.TabIndex = 4;
             this.bunifuTileButton4.Click += new System.EventHandler(this.bunifuTileButton4_Click);
             // 
             // lblUser
@@ -134,7 +144,7 @@
             this.bunifuTileButton3.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton3.Name = "bunifuTileButton3";
             this.bunifuTileButton3.Size = new System.Drawing.Size(104, 99);
-            this.bunifuTileButton3.TabIndex = 1;
+            this.bunifuTileButton3.TabIndex = 3;
             this.bunifuTileButton3.Click += new System.EventHandler(this.bunifuTileButton3_Click);
             // 
             // bunifuTileButton2
@@ -154,7 +164,7 @@
             this.bunifuTileButton2.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton2.Name = "bunifuTileButton2";
             this.bunifuTileButton2.Size = new System.Drawing.Size(104, 99);
-            this.bunifuTileButton2.TabIndex = 1;
+            this.bunifuTileButton2.TabIndex = 2;
             this.bunifuTileButton2.Click += new System.EventHandler(this.bunifuTileButton2_Click);
             // 
             // bunifuTileButton1
@@ -174,7 +184,7 @@
             this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton1.Name = "bunifuTileButton1";
             this.bunifuTileButton1.Size = new System.Drawing.Size(104, 99);
-            this.bunifuTileButton1.TabIndex = 0;
+            this.bunifuTileButton1.TabIndex = 1;
             this.bunifuTileButton1.Click += new System.EventHandler(this.bunifuTileButton1_Click);
             // 
             // bunifuElipse1
@@ -186,12 +196,19 @@
             // 
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.bunifuCustomLabel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 120);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1280, 600);
+            this.panel2.Size = new System.Drawing.Size(1287, 605);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::ledger_horana.Properties.Resources.book;
+            this.panel3.Location = new System.Drawing.Point(436, 168);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(406, 333);
+            this.panel3.TabIndex = 9;
             // 
             // bunifuCustomLabel1
             // 
@@ -202,13 +219,55 @@
             this.bunifuCustomLabel1.TabIndex = 8;
             this.bunifuCustomLabel1.Text = "Designed by Autonomous Factory  0761262279";
             // 
-            // panel3
+            // bunifuCustomLabel2
             // 
-            this.panel3.BackgroundImage = global::ledger_horana.Properties.Resources.book;
-            this.panel3.Location = new System.Drawing.Point(436, 168);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(406, 333);
-            this.panel3.TabIndex = 9;
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Hobo Std", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(26, 12);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(310, 34);
+            this.bunifuCustomLabel2.TabIndex = 7;
+            this.bunifuCustomLabel2.Text = "Karunarathne Enterprices";
+            // 
+            // txtDebit
+            // 
+            this.txtDebit.AutoSize = true;
+            this.txtDebit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDebit.Location = new System.Drawing.Point(32, 53);
+            this.txtDebit.Name = "txtDebit";
+            this.txtDebit.Size = new System.Drawing.Size(58, 24);
+            this.txtDebit.TabIndex = 8;
+            this.txtDebit.Text = "ලැබීම්";
+            // 
+            // txtCredit
+            // 
+            this.txtCredit.AutoSize = true;
+            this.txtCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCredit.Location = new System.Drawing.Point(32, 86);
+            this.txtCredit.Name = "txtCredit";
+            this.txtCredit.Size = new System.Drawing.Size(64, 24);
+            this.txtCredit.TabIndex = 9;
+            this.txtCredit.Text = "ගෙවීම්";
+            // 
+            // lblDebit
+            // 
+            this.lblDebit.AutoSize = true;
+            this.lblDebit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDebit.Location = new System.Drawing.Point(126, 53);
+            this.lblDebit.Name = "lblDebit";
+            this.lblDebit.Size = new System.Drawing.Size(73, 24);
+            this.lblDebit.TabIndex = 10;
+            this.lblDebit.Text = "---------";
+            // 
+            // lblGeweem
+            // 
+            this.lblGeweem.AutoSize = true;
+            this.lblGeweem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeweem.Location = new System.Drawing.Point(126, 86);
+            this.lblGeweem.Name = "lblGeweem";
+            this.lblGeweem.Size = new System.Drawing.Size(73, 24);
+            this.lblGeweem.TabIndex = 11;
+            this.lblGeweem.Text = "---------";
             // 
             // frmMain
             // 
@@ -221,7 +280,9 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -241,5 +302,10 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Panel panel3;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblGeweem;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblDebit;
+        private Bunifu.Framework.UI.BunifuCustomLabel txtCredit;
+        private Bunifu.Framework.UI.BunifuCustomLabel txtDebit;
     }
 }

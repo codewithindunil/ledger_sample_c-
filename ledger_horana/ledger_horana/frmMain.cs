@@ -1,10 +1,13 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -108,8 +111,12 @@ namespace ledger_horana
 
         private void lblUser_Click(object sender, EventArgs e)
         {
-            panel2.Controls.Clear();
-           
+            viewDailyTotal();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            viewDailyTotal();
         }
 
         private void bunifuTileButton4_Click(object sender, EventArgs e)
@@ -122,6 +129,53 @@ namespace ledger_horana
             else
             {
                 MessageBox.Show("Sorry You Don't Have Admin access");
+            }
+        }
+    
+
+        public void viewDailyTotal()
+        {
+            var d = DateTime.Now;
+
+            CultureInfo cul = CultureInfo.CurrentCulture;
+            String serverName = new implementActions().serverName;
+            String serveruser = new implementActions().serveruser;
+            String serverPassword = new implementActions().serverPassword;
+    
+            int dateNum = cul.Calendar.GetDayOfYear(d);
+            MySqlDataReader rd;
+            string sMonth = DateTime.Now.ToString("MM");
+            MySqlConnection conn;
+            string connetionString = null;
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
+            conn = new MySqlConnection(connetionString);
+            String query;
+
+
+            query = "select * from dailyTotal where dateNo='" + dateNum + "'";
+
+            try
+            {
+                conn.Open();
+                MySqlCommand command = new MySqlCommand(query, conn);
+                rd = command.ExecuteReader();
+                while (rd.Read())
+                {
+                    lblDebit.Text = rd["debitTotal"].ToString();
+                    lblGeweem.Text= rd["creditTotal"].ToString();
+                
+
+
+
+                }
+                conn.Close();
+
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
     }
