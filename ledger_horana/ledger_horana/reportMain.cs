@@ -25,5 +25,10 @@ namespace ledger_horana
             //item.Left = 10;
             panel1.Controls.Add(item);
         }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            new frmReportViewer().Show();
+        }
     }
 }

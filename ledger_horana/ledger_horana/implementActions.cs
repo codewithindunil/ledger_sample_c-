@@ -14,7 +14,7 @@ namespace ledger_horana
         bool status = false;
         int count;
         public String dt, ct;
-         public  String serverPassword="1627";
+         public  String serverPassword="";
         public String serverName = "localhost";
         public String serveruser = "root";
         public bool addCategory(String cname)
