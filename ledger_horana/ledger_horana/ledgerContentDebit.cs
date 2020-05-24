@@ -21,50 +21,58 @@ namespace ledger_horana
 
         private void txtSubmit_Click(object sender, EventArgs e)
         {
-            String category, subCategory, invoiceNo, cOrCheque, user;
-            double invoiceValue, paidValue, igesheOld, igesheNew;
-            int bnn;
-            String invoiceDate;
 
-            category = comboBox1.SelectedItem.ToString();
-            subCategory = comboBox2.SelectedItem.ToString();
+            if (txtBmn.Text == "" && txtInvoiceNo.Text == "" && txtInvoiceValue.Text == "" && txtPaidAmount.Text == "" )
+            {
+                MessageBox.Show("Please fill all fields");
+            }
+            else
+            {
 
-            invoiceNo = txtInvoiceNo.Text.ToString();
-            cOrCheque = bunifuDropdown3.selectedValue.ToString();
-            user = "test";
+                String category, subCategory, invoiceNo, cOrCheque, user;
+                double invoiceValue, paidValue, igesheOld, igesheNew;
+                int bnn;
+                String invoiceDate;
 
-            invoiceValue = double.Parse(txtInvoiceValue.Text);
-            paidValue = double.Parse(txtPaidAmount.Text);
-            invoiceDate = dateTimePicker1.Value.ToString();
-            bnn = int.Parse(txtBmn.Text);
-            String ret = new implementActions().getCreditFinal();
-            igesheOld = double.Parse(ret);
-            var d = dateTimePicker1.Value.Date;
+                category = comboBox1.SelectedItem.ToString();
+                subCategory = comboBox2.SelectedItem.ToString();
 
-            CultureInfo cul = CultureInfo.CurrentCulture;
-            int weekNum = cul.Calendar.GetWeekOfYear(
-                 d,
-                CalendarWeekRule.FirstDay,
-                DayOfWeek.Monday);
+                invoiceNo = txtInvoiceNo.Text.ToString();
+                cOrCheque = bunifuDropdown3.selectedValue.ToString();
+                user = "test";
 
-            int dateNum = cul.Calendar.GetDayOfYear(d);
+                invoiceValue = double.Parse(txtInvoiceValue.Text);
+                paidValue = double.Parse(txtPaidAmount.Text);
+                invoiceDate = dateTimePicker1.Value.ToString();
+                bnn = int.Parse(txtBmn.Text);
+                String ret = new implementActions().getCreditFinal();
+                igesheOld = double.Parse(ret);
+                var d = dateTimePicker1.Value.Date;
+
+                CultureInfo cul = CultureInfo.CurrentCulture;
+                int weekNum = cul.Calendar.GetWeekOfYear(
+                     d,
+                    CalendarWeekRule.FirstDay,
+                    DayOfWeek.Monday);
+
+                int dateNum = cul.Calendar.GetDayOfYear(d);
 
 
-          
-                    igesheNew = igesheOld + invoiceValue;
-                    bool status = new implementActions().addDebit(category, subCategory, invoiceNo, invoiceDate, invoiceValue, paidValue, cOrCheque, bnn, user, igesheNew,weekNum.ToString(), dateNum.ToString());
-                    if (status == true)
-                    {
-                        MessageBox.Show("success");
-                    }
-                    else
-                    {
-                        MessageBox.Show("failes");
-                    }
 
-                
-            
+                igesheNew = igesheOld + invoiceValue;
+                bool status = new implementActions().addDebit(category, subCategory, invoiceNo, invoiceDate, invoiceValue, paidValue, cOrCheque, bnn, user, igesheNew, weekNum.ToString(), dateNum.ToString());
+                if (status == true)
+                {
+                    MessageBox.Show("success");
+                }
+                else
+                {
+                    MessageBox.Show("failes");
+                }
 
+
+
+            }
            
         }
 
@@ -166,6 +174,16 @@ namespace ledger_horana
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtBmn.Text = "";
+            txtInvoiceNo.Text = "";
+            txtInvoiceValue.Text = "";
+            txtPaidAmount.Text = "";
+            
 
         }
     }

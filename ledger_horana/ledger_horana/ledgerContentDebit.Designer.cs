@@ -91,7 +91,7 @@
             this.bunifuDropdown3.Name = "bunifuDropdown3";
             this.bunifuDropdown3.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuDropdown3.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown3.selectedIndex = -1;
+            this.bunifuDropdown3.selectedIndex = 0;
             this.bunifuDropdown3.Size = new System.Drawing.Size(140, 30);
             this.bunifuDropdown3.TabIndex = 8;
             this.bunifuDropdown3.onItemSelected += new System.EventHandler(this.bunifuDropdown3_onItemSelected);
@@ -146,6 +146,7 @@
             this.btnClear.Size = new System.Drawing.Size(181, 41);
             this.btnClear.TabIndex = 16;
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtSubmit
             // 

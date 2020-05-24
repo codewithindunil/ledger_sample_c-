@@ -27,6 +27,13 @@ namespace ledger_horana
 
         private void txtSubmit_Click(object sender, EventArgs e)
         {
+            if(txtBmn.Text =="" && txtInvoiceNo.Text==""&& txtInvoiceValue.Text=="" && txtPaidAmount.Text=="" )
+            {
+                MessageBox.Show("Please fill all fields");
+            }
+            else
+            {
+
             String category, subCategory, invoiceNo, cOrCheque, user;
             double invoiceValue, paidValue, igesheOld,igesheNew;
             int bnn;
@@ -69,10 +76,10 @@ namespace ledger_horana
                     MessageBox.Show("failes");
                 }
 
-            
 
 
-            
+            }
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
