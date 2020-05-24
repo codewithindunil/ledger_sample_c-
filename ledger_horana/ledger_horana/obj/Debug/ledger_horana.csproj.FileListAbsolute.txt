@@ -2,7 +2,6 @@ D:\project horana\ledger_horana\ledger_horana\bin\Debug\ledger_horana.exe.config
 D:\project horana\ledger_horana\ledger_horana\bin\Debug\ledger_horana.exe
 D:\project horana\ledger_horana\ledger_horana\bin\Debug\ledger_horana.pdb
 D:\project horana\ledger_horana\ledger_horana\bin\Debug\Bunifu_UI_v1.52.dll
-D:\project horana\ledger_horana\ledger_horana\obj\Debug\ledger_horana.csprojAssemblyReference.cache
 D:\project horana\ledger_horana\ledger_horana\obj\Debug\ledger_horana.Form1.resources
 D:\project horana\ledger_horana\ledger_horana\obj\Debug\ledger_horana.frmLogin.resources
 D:\project horana\ledger_horana\ledger_horana\obj\Debug\ledger_horana.Properties.Resources.resources

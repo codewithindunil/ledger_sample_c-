@@ -83,7 +83,7 @@ namespace ledger_horana
 
         public String getUser()
         {
-            user = lblUser.Text;
+            user = lblUser.Text; 
             return user;
         }
         public String getPrivilages()
@@ -123,7 +123,7 @@ namespace ledger_horana
         {
             if (privilages == "1")
             {
-                new frmAdmin().Show();
+                new frmAdmin(user).Show();
 
             }
             else

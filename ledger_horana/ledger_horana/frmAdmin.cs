@@ -12,8 +12,10 @@ namespace ledger_horana
 {
     public partial class frmAdmin : Form
     {
-        public frmAdmin()
+        String user;
+        public frmAdmin(String user)
         {
+            this.user = user;
             InitializeComponent();
         }
 
@@ -23,7 +25,8 @@ namespace ledger_horana
             name = txtame.Text;
             username = txtUsername.Text;
             password = txtPassword.Text;
-            addedBy = new frmMain().getUser();
+            //addedBy = new frmMain().getUser();
+            addedBy = user;
             if (bunifuSwitch1.Value == true)
             {
                 privilages = "1";
