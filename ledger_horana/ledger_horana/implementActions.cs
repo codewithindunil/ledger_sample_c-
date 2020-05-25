@@ -677,6 +677,45 @@ namespace ledger_horana
                 Console.WriteLine(e);
             }
         }
+        public void editInvoice()
+        {
 
+        }
+
+        public void getInvoice(String invoiceNo)
+        {
+            MySqlDataReader rd;
+            string sMonth = DateTime.Now.ToString("MM");
+            MySqlConnection conn;
+            string connetionString = null;
+            connetionString = "server='" + serverName + "';database=ledger_horanadb;uid='" + serveruser + "';pwd='" + serverPassword + "';";
+            conn = new MySqlConnection(connetionString);
+            String query;
+
+
+            query = "select * from ledgerdebit where invoice_no='" + invoiceNo + "'";
+            
+
+            try
+            {
+                conn.Open();
+                MySqlCommand command = new MySqlCommand(query, conn);
+                rd = command.ExecuteReader();
+                while (rd.Read())
+                {
+                    
+
+                }
+                conn.Close();
+                
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+        }
     }
 }

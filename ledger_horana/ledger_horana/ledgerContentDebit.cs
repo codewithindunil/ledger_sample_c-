@@ -186,5 +186,10 @@ namespace ledger_horana
             
 
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

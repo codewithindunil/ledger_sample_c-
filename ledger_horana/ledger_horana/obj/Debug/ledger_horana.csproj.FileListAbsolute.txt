@@ -52,3 +52,4 @@ D:\project horana\ledger_horana\ledger_horana\bin\Debug\AxShockwaveFlashObjects.
 D:\project horana\ledger_horana\ledger_horana\bin\Debug\CrystalDecisions.Windows.Forms.dll
 D:\project horana\ledger_horana\ledger_horana\bin\Debug\ShockwaveFlashObjects.dll
 D:\project horana\ledger_horana\ledger_horana\obj\Debug\ledger_horana.frmReportViewer.resources
+D:\project horana\ledger_horana\ledger_horana\obj\Debug\ledger_horana.csprojAssemblyReference.cache

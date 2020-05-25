@@ -47,12 +47,13 @@
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuDropdown2 = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
             this.btnVoucher = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnClear = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +120,7 @@
             this.txtSubmit.Size = new System.Drawing.Size(181, 41);
             this.txtSubmit.TabIndex = 15;
             this.txtSubmit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtSubmit.Click += new System.EventHandler(this.txtSubmit_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -229,26 +231,27 @@
             this.bunifuDropdown3.BorderRadius = 3;
             this.bunifuDropdown3.ForeColor = System.Drawing.Color.White;
             this.bunifuDropdown3.Items = new string[] {
-        "cash",
-        "cheque"};
+        "CASH",
+        "CHEQUE"};
             this.bunifuDropdown3.Location = new System.Drawing.Point(362, 273);
             this.bunifuDropdown3.Name = "bunifuDropdown3";
             this.bunifuDropdown3.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuDropdown3.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown3.selectedIndex = -1;
+            this.bunifuDropdown3.selectedIndex = 0;
             this.bunifuDropdown3.Size = new System.Drawing.Size(140, 30);
             this.bunifuDropdown3.TabIndex = 18;
             this.bunifuDropdown3.onItemSelected += new System.EventHandler(this.bunifuDropdown3_onItemSelected);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.bunifuThinButton22);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.bunifuThinButton21);
             this.groupBox2.Controls.Add(this.bunifuMetroTextbox1);
             this.groupBox2.Controls.Add(this.bunifuCustomLabel10);
-            this.groupBox2.Controls.Add(this.bunifuDropdown2);
             this.groupBox2.Controls.Add(this.bunifuCustomLabel9);
             this.groupBox2.Controls.Add(this.bunifuCustomLabel8);
-            this.groupBox2.Controls.Add(this.bunifuDropdown1);
             this.groupBox2.Controls.Add(this.bunifuDropdown3);
             this.groupBox2.Controls.Add(this.btnVoucher);
             this.groupBox2.Controls.Add(this.btnClear);
@@ -278,7 +281,7 @@
             this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "ENTER";
+            this.bunifuThinButton21.ButtonText = "UPDATE";
             this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
@@ -287,7 +290,7 @@
             this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
             this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(362, 360);
+            this.bunifuThinButton21.Location = new System.Drawing.Point(197, 360);
             this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton21.Name = "bunifuThinButton21";
             this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
@@ -321,24 +324,10 @@
             this.bunifuCustomLabel10.TabIndex = 23;
             this.bunifuCustomLabel10.Text = "Invoice No :";
             // 
-            // bunifuDropdown2
-            // 
-            this.bunifuDropdown2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown2.BorderRadius = 3;
-            this.bunifuDropdown2.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown2.Items = new string[0];
-            this.bunifuDropdown2.Location = new System.Drawing.Point(362, 43);
-            this.bunifuDropdown2.Name = "bunifuDropdown2";
-            this.bunifuDropdown2.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuDropdown2.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown2.selectedIndex = -1;
-            this.bunifuDropdown2.Size = new System.Drawing.Size(305, 30);
-            this.bunifuDropdown2.TabIndex = 22;
-            // 
             // bunifuCustomLabel9
             // 
             this.bunifuCustomLabel9.AutoSize = true;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(294, 56);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(309, 57);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(35, 13);
             this.bunifuCustomLabel9.TabIndex = 20;
@@ -352,20 +341,6 @@
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(49, 13);
             this.bunifuCustomLabel8.TabIndex = 19;
             this.bunifuCustomLabel8.Text = "Category";
-            // 
-            // bunifuDropdown1
-            // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 3;
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.Items = new string[0];
-            this.bunifuDropdown1.Location = new System.Drawing.Point(102, 43);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(140, 30);
-            this.bunifuDropdown1.TabIndex = 21;
             // 
             // btnVoucher
             // 
@@ -410,12 +385,57 @@
             this.btnClear.IdleFillColor = System.Drawing.Color.White;
             this.btnClear.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnClear.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnClear.Location = new System.Drawing.Point(570, 360);
+            this.btnClear.Location = new System.Drawing.Point(388, 360);
             this.btnClear.Margin = new System.Windows.Forms.Padding(5);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(181, 41);
             this.btnClear.TabIndex = 16;
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(362, 54);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(268, 21);
+            this.comboBox2.TabIndex = 27;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(93, 53);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(187, 21);
+            this.comboBox1.TabIndex = 26;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // bunifuThinButton22
+            // 
+            this.bunifuThinButton22.ActiveBorderThickness = 1;
+            this.bunifuThinButton22.ActiveCornerRadius = 20;
+            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton22.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
+            this.bunifuThinButton22.ButtonText = "DELETE";
+            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton22.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton22.IdleBorderThickness = 1;
+            this.bunifuThinButton22.IdleCornerRadius = 20;
+            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton22.Location = new System.Drawing.Point(575, 360);
+            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuThinButton22.Name = "bunifuThinButton22";
+            this.bunifuThinButton22.Size = new System.Drawing.Size(181, 41);
+            this.bunifuThinButton22.TabIndex = 28;
+            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
             // 
             // ledgerContentEdit
             // 
@@ -426,6 +446,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ledgerContentEdit";
             this.Size = new System.Drawing.Size(1002, 598);
+            this.Load += new System.EventHandler(this.ledgerContentEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -455,9 +476,10 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
     }
 }

@@ -36,8 +36,17 @@ namespace ledger_horana
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            new implementActions().checkDuePayements();
-            new implementActions().setDailyTotalIfNotSet();
+            try
+            {
+                new implementActions().checkDuePayements();
+                new implementActions().setDailyTotalIfNotSet();
+
+            }
+            catch(Exception )
+            {
+                MessageBox.Show("Servers are down....");
+            }
+           
 
 
         }
